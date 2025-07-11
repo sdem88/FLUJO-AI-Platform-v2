@@ -1,0 +1,5 @@
+run = "npm run dev --prefix $REPL_HOME"
+entrypoint = "index.js"        # dummy, Replit requirement
+language = "nodejs"
+onBoot = [ "bash setup.sh" ]   # one-time repo clone + install
+env.PORT = "4200"
