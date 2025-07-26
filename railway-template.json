@@ -1,0 +1,50 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "sleepApplication": false,
+    "restartPolicyType": "ON_FAILURE"
+  },
+  "environment": {
+    "NODE_ENV": {
+      "default": "production"
+    },
+    "NEXT_TELEMETRY_DISABLED": {
+      "default": "1"
+    },
+    "DEFAULT_MODEL": {
+      "default": "gemini-25-pro"
+    },
+    "DEFAULT_TEMPERATURE": {
+      "default": "0.1"
+    },
+    "DEFAULT_MAX_TOKENS": {
+      "default": "4000"
+    }
+  },
+  "variables": {
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API ключ для доступа к GPT-4 и o3 моделям"
+    },
+    "ANTHROPIC_API_KEY": {
+      "description": "Anthropic API ключ для доступа к Claude моделям"
+    },
+    "GOOGLE_API_KEY": {
+      "description": "Google API ключ для Gemini (можно получить бесплатно)"
+    },
+    "OPENROUTER_API_KEY": {
+      "description": "OpenRouter API ключ (опционально)"
+    },
+    "ENCRYPTION_KEY": {
+      "description": "Ключ шифрования (автогенерируется)",
+      "generate": true
+    },
+    "SESSION_SECRET": {
+      "description": "Секрет сессий (автогенерируется)",  
+      "generate": true
+    }
+  }
+}
