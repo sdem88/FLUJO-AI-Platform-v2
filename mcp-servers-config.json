@@ -1,0 +1,47 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "node",
+      "args": ["./mcp-servers/servers/dist/filesystem/index.js"],
+      "env": {},
+      "allowedDirectories": [
+        "/Users/sergeidemchuk/кодинг",
+        "/Users/sergeidemchuk/Desktop",
+        "/Users/sergeidemchuk/Documents"
+      ]
+    },
+    "memory": {
+      "command": "node",
+      "args": ["./mcp-servers/servers/dist/memory/index.js"],
+      "env": {}
+    },
+    "time": {
+      "command": "python3",
+      "args": ["-m", "mcp_server_time"],
+      "cwd": "./mcp-servers/servers/src/time",
+      "env": {}
+    },
+    "git": {
+      "command": "python3",
+      "args": ["-m", "mcp_server_git"],
+      "cwd": "./mcp-servers/servers/src/git",
+      "env": {}
+    },
+    "fetch": {
+      "command": "python3",
+      "args": ["-m", "mcp_server_fetch"],
+      "cwd": "./mcp-servers/servers/src/fetch",
+      "env": {}
+    },
+    "everything": {
+      "command": "node",
+      "args": ["./mcp-servers/servers/dist/everything/index.js"],
+      "env": {}
+    },
+    "sequentialthinking": {
+      "command": "node", 
+      "args": ["./mcp-servers/servers/dist/sequentialthinking/index.js"],
+      "env": {}
+    }
+  }
+}
