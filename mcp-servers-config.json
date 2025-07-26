@@ -42,6 +42,12 @@
       "command": "node", 
       "args": ["./mcp-servers/servers/dist/sequentialthinking/index.js"],
       "env": {}
+    },
+    "deployment": {
+      "command": "node",
+      "args": ["./mcp-servers/deployment-server/index.js"],
+      "env": {},
+      "description": "🚀 Автоматический деплой FLUJO в GitHub + Railway"
     }
   }
 }
