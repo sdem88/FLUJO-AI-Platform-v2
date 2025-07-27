@@ -1,5 +1,21 @@
-run = "npm run dev --prefix $REPL_HOME"
-entrypoint = "index.js"        # dummy, Replit requirement
+run = "npm install && npm run build && npm start"
+entrypoint = "package.json"
 language = "nodejs"
-onBoot = [ "bash setup.sh" ]   # one-time repo clone + install
-env.PORT = "4200"
+modules = ["nodejs-20", "web"]
+
+[env]
+PORT = "4200"
+NODE_ENV = "production"
+NEXT_TELEMETRY_DISABLED = "1"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run build && npm start"]
+deploymentTarget = "cloudrun"
+publicDir = "/"
+
+[[ports]]
+localPort = 4200
+externalPort = 80
